@@ -17,19 +17,19 @@ notes.post('/', (req, res) => {
 
   const { title, text } = req.body;
 
-//   if (req.body) {
-//     const newTip = {
-//       username,
-//       tip,
-//       topic,
-//       tip_id: uuid(),
-//     };
+  if (req.body) {
+    const newNote = {
+      username,
+      tip,
+      topic,
+      tip_id: uuid(),
+    };
 
-//     readAndAppend(newTip, './db/tips.json');
-//     res.json(`Tip added successfully 🚀`);
-//   } else {
-//     res.error('Error in adding tip');
-//   }
+    readAndAppend(newNote, './db/db.json');
+    res.json(`Note added successfully 🚀`);
+  } else {
+    res.error('Error in adding note');
+  }
 });
 
 module.exports = notes;
