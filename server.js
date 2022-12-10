@@ -16,6 +16,7 @@ app.use('/api', api);
 app.use(express.static('public'));
 
 // GET Route for homepage
+///// this is redundant or ignored because it is in static public already
 app.get('/', (req, res) =>
   res.sendFile(path.join(__dirname, '/public/index.html'))
 );
