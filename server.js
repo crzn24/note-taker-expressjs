@@ -1,8 +1,10 @@
+// Dependencies
 const express = require('express');
 const path = require('path');
-const api = require('./routes/index.js');
+const api = require('./routes/index.js'); // Point Server to the route files
 
-const PORT = 3001;
+// Sets PORT
+const PORT = process.env.PORT || 3001;
 
 const app = express();
 
@@ -23,6 +25,7 @@ app.get('/notes', (req, res) =>
   res.sendFile(path.join(__dirname, '/public/notes.html'))
 );
 
+// Listener
 app.listen(PORT, () =>
   console.log(`App listening at http://localhost:${PORT} 🚀`)
 );
