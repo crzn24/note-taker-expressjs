@@ -19,9 +19,8 @@ notes.post('/', (req, res) => {
 
   if (req.body) {
     const newNote = {
-      username,
-      tip,
-      topic,
+      title,
+      text,
       tip_id: uuid(),
     };
 
