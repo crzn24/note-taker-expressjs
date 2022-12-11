@@ -33,7 +33,10 @@ notes.post('/', (req, res) => {
 
 
 
-// BONUS Delete 
+// BONUS Delete request
+notes.delete('/api/notes/:id', (req, res) => {
+  
+});
 
 
 
