@@ -31,4 +31,11 @@ notes.post('/', (req, res) => {
   }
 });
 
+
+
+// BONUS Delete 
+
+
+
+
 module.exports = notes;
