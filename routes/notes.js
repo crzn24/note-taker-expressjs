@@ -1,7 +1,7 @@
 ////// API Router for notes ////////
 
 const notes = require('express').Router();
-const { readFromFile, readAndAppend } = require('../helpers/fsUtils');
+const { readFromFile, readAndAppend, writeToFile } = require('../helpers/fsUtils');
 const uuid = require('../helpers/uuid');
 
 // GET Route for retrieving all the notes first
@@ -48,20 +48,8 @@ notes.delete('/:id', (req, res) => {
     
     const filteredNotes = notes.filter(note => note.id !== req.params.id);
 
-    readAndAppend(filteredNotes, './db/db.json');
+    writeToFile('./db/db.json', filteredNotes);
     res.json(`Note deleted successfully 🚀`);
-  
-    // return this.getNotes()
-    //     .then(notes => notes.filter(note => note.id !== id))
-    //     .then(updatedNotes => this.write(updatedNotes));
-
-    // deleteNote(req.params.id)
-    // fs.writeFileSync("./db/db.json", JSON.stringify(notes))
-    // res.json(JSON.stringify(notes))
-    // function deleteNote(id){
-    //   let current = notes.filter(task => task.id != id);
-    //   notes=current;
-    // };
   });
 
 });
