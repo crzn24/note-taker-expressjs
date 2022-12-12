@@ -39,13 +39,37 @@ notes.delete('/:id', (req, res) => {
   console.log('--- delete route hit ---')
   console.info(`${req.method} request received to delete a note`);
 
+  
   readFromFile('./db/db.json').then((data) => {
     let notes = JSON.parse(data);
     console.log(req.params.id);
     console.log(notes);
     // use filter method on the notes array to filter out the deleted note by checking on the id value, and then write to the file with the newly filtered array.
-  });
+    
+    const filteredNotes = notes.filter(note => note.id !== req.params.id);
 
+    readAndAppend(filteredNotes, './db/db.json');
+    res.json(`Note deleted successfully 🚀`);
+  
+    // return this.getNotes()
+    //     .then(notes => notes.filter(note => note.id !== id))
+    //     .then(updatedNotes => this.write(updatedNotes));
+
+    // deleteNote(req.params.id)
+    // fs.writeFileSync("./db/db.json", JSON.stringify(notes))
+    // res.json(JSON.stringify(notes))
+    // function deleteNote(id){
+    //   let current = notes.filter(task => task.id != id);
+    //   notes=current;
+    // };
+
+  //   readAndAppend(newNote, './db/db.json');
+  //   res.json(`Note added successfully 🚀`);
+  // } else {
+  //   res.error('Error in adding note');
+  // }
+
+  });
 
 });
 
