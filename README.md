@@ -18,8 +18,7 @@ Even though we were given starter code, knowing where to begin was difficult for
 This application allows users to add notes with a title and text and save them even after refreshing the page. This app also allows users to delete the notes.
 
 [Link to Repository](https://github.com/crzn24/note-taker-expressjs.git)
-<!-- link to heroku -->
-[Deployed app]()
+[Deployed app]( https://note-taker-expressjs-crzn24.herokuapp.com/)
 
 ![Screenshot of landing page](./assets/images/notetakerlanding.png)
 ![Screenshot blank notes page](./assets/images/notetakerblank.png)
